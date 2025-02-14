@@ -27,9 +27,36 @@ def powers(lst,start,end):
         matrix.append(new_list)
     return matrix
 
-print(powers([2,3,4],0,2))
+#print(powers([2,3,4],0,2))
 
 
+def matmul(A,B):
+    rowsA = len(A) #=antal rader
+    rowsB = len(B) #=antal rader
+    colsA =len(A[0])#=antal kolonners
+    colsB =len(B[0])#=antal kolonner
+    print(colsB)
+    C = []
+    
+    for i in range(rowsA):
+        for j in range(rowsB):
+            step1_A=A[i][j]
+            step1_B=B[i][j]
+        for k in range(colsA):
+            for l in range(colsB):
+                step2_A=A[k][l+1]
+                step2_B=B[k][l+1]
+
+        square=step1_A*step1_B+step2_A*step2_B
+        C.append(square)
 
 
-#def matmul(A,B):
+    return C  
+
+A = [[0,1]
+     ,[1,0]
+     ]
+B = [[1, 0]
+     ,[0,-1]
+     ]
+print(matmul(A,B))
