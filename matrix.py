@@ -29,7 +29,7 @@ def powers(lst,start,end):
 
 #print(powers([2,3,4],0,2))
 
-
+"""
 def matmul(A,B):
     rowsA = len(A) #=antal rader
     rowsB = len(B) #=antal rader
@@ -52,11 +52,35 @@ def matmul(A,B):
 
 
     return C  
+"""
 
-A = [[0,1]
-     ,[1,0]
-     ]
-B = [[1, 0]
-     ,[0,-1]
-     ]
-print(matmul(A,B))
+
+def matmul(A, B):
+    rowsA = len(A)
+    colsA = len(A[0])
+    rowsB = len(B)
+    colsB = len(B[0])
+
+    C = []
+
+    for i in range(rowsA):
+        rad = []  
+        for j in range(colsB):
+            summa = 0  
+            for k in range(colsA):
+                summa += A[i][k] * B[k][j]
+
+            rad.append(summa)
+        
+        C.append(rad)
+
+    return C
+#tester matmul:
+#A = [[0,1],[1,0]]
+#B = [[1, 0],[0,-1]]
+#print(matmul(A,B))
+
+#print(matmul([[1, 2, 3], [4, 5, 6]],[[7,8,9,10],[11,12,13,14],[15,16,17,18]]))
+
+#I = [[1,0,0],[0,1,0],[0,0,1]]
+#print(matmul(I,[[1, 2, 3], [4, 5, 6],[7, 8, 9]]))
