@@ -1,6 +1,6 @@
 def transpose(matrix):
     rows = len(matrix) #=antal rader
-    cols =len(matrix[0])#=antal kolonner
+    cols =len(matrix[0]) #=antal kolonner
     new_matrix = []
     
     for j in range(cols):
@@ -28,32 +28,6 @@ def powers(lst,start,end):
     return matrix
 
 #print(powers([2,3,4],0,2))
-
-"""
-def matmul(A,B):
-    rowsA = len(A) #=antal rader
-    rowsB = len(B) #=antal rader
-    colsA =len(A[0])#=antal kolonners
-    colsB =len(B[0])#=antal kolonner
-    print(colsB)
-    C = []
-    
-    for i in range(rowsA):
-        for j in range(rowsB):
-            step1_A=A[i][j]
-            step1_B=B[i][j]
-        for k in range(colsA):
-            for l in range(colsB):
-                step2_A=A[k][l+1]
-                step2_B=B[k][l+1]
-
-        square=step1_A*step1_B+step2_A*step2_B
-        C.append(square)
-
-
-    return C  
-"""
-
 
 def matmul(A, B):
     rowsA = len(A)
@@ -84,3 +58,21 @@ def matmul(A, B):
 
 #I = [[1,0,0],[0,1,0],[0,0,1]]
 #print(matmul(I,[[1, 2, 3], [4, 5, 6],[7, 8, 9]]))
+
+
+def invert(M):
+    det=M[0][0]*M[1][1]-M[0][1]*M[1][0]
+    A=[[M[0][1]/det, -M[0][1]/det], [-M[1][0]/det, M[0][0]/det]]
+    return A
+
+
+
+def loadtxt(name):
+    x=open(name)
+    result=[]
+    for line in x.readlines():
+        y=line.split()
+        result.append(y)
+    x.close()
+    return result
+#print(loadtxt('chirps.txt'))
