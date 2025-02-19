@@ -20,14 +20,16 @@ def powers(lst,start,end):
         
         new_list=[]
         
+        value = float(lst[e])  #gör om till int. vet inte om det är rätt men det slutade komma error
         for exponent in range(start,end+1):
-            new_value=lst[e]**exponent
+            new_value=value**exponent
             new_list.append(new_value)
 
         matrix.append(new_list)
     return matrix
 
 #print(powers([2,3,4],0,2))
+
 
 def matmul(A, B):
     rowsA = len(A)
