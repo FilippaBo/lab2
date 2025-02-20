@@ -13,13 +13,16 @@ Yp  = powers(Y,1,1)
 Xpt = transpose(Xp)
 
 [[b],[m]] = matmul(invert(matmul(Xpt,Xp)),matmul(Xpt,Yp))
+m=float(m)
+b=float(b)
 
 #temperature=25
 #predicted_number_of_chirps = b + m * temperature   
 #print(predicted_number_of_chirps,b,m)
+
 Y2=[]
-for i in X: #For each value in X (the temperature)...
-    Y2.append(b + m * i) #testat med att göra b&m till antingen int/float
+for i in X: 
+    Y2.append(b + m * i) 
 
 plt.plot(X,Y,'ro')
 plt.plot(X,Y2)
