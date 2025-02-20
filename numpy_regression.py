@@ -29,4 +29,3 @@ for i in X:
 plt.plot(X,Y,'ro')
 plt.plot(X,Y2)
 plt.show()
-

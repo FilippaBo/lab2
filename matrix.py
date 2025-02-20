@@ -40,15 +40,15 @@ def matmul(A, B):
     C = []
 
     for i in range(rowsA):
-        rad = []  
+        row = []  
         for j in range(colsB):
             summa = 0  
             for k in range(colsA):
                 summa += A[i][k] * B[k][j]
 
-            rad.append(summa)
+            row.append(summa)
         
-        C.append(rad)
+        C.append(row)
 
     return C
 #tester matmul:
@@ -74,7 +74,10 @@ def loadtxt(name):
     result=[]
     for line in x.readlines():
         y=line.split()
-        result.append(y)
+        tal=[]
+        for i in y:
+            tal.append(float(i))
+        result.append(tal)
     x.close()
     return result
 #print(loadtxt('chirps.txt'))
