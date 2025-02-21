@@ -34,14 +34,23 @@ def polynom_regression(data,n):
     Xp  = powers(X,0,n)
     Yp  = powers(Y,1,1)
     Xpt = Xp.transpose()
-
+    #print(Xp)
     a = matmul(linalg.inv(matmul(Xpt,Xp)),matmul(Xpt,Yp))
     a = a[:,0]
+    
+        
+    sorted_lst=X.sort()
+    X2=linspace(sorted_lst[0],sorted_lst[-1],n).tolist()
 
     Y2=[]
-    for x in X: 
+    for x in X2: 
         Y2.append(poly(a,x))
     
+    
+
+
+
+    print(Y2)
     plt.plot(X,Y,'ro')
     plt.plot(X,Y2)
     plt.show()
@@ -50,8 +59,17 @@ def polynom_regression(data,n):
 def poly(a,x):
     
     n=len(a)
-    for i in a:
-        powers(x,0,n)
+    function=[]
+    for i in range(n):
+        #r=powers(x,0,n) 
+        r=x**i
+        function.append(a[i]*r)
+    
+    return sum(function)
+
+#print(poly([1,2,3],4))
+
+
 
 
 
@@ -64,7 +82,8 @@ def poly(a,x):
 
 
 data=loadtxt("chirps-modified.txt")
-polynom_regression(data)
+polynom_regression(data,0.2)
 
 #print(powers([2,3,4],0,2))
+
 
