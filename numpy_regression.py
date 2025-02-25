@@ -72,10 +72,14 @@ def poly(a,x):
 
 #print(poly([1,2,3],4))
 
-data=loadtxt(sys.argv[1])
-deg=int(sys.argv[2])
-polynom_regression(data,deg)
+def main():
+    data=loadtxt(sys.argv[1])
+    deg=int(sys.argv[2])
+    polynom_regression(data,deg)
 
-#print(powers([2,3,4],0,2))
+if __name__ == "__main__":
+    main()
 
 
+#python3 test.py
+#python3 numpy_regression.py dataset3.txt 4

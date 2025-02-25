@@ -1,4 +1,6 @@
 def transpose(matrix):
+    if not matrix:  #kollar om matrix är tom
+        return []
     rows = len(matrix) #=antal rader
     cols =len(matrix[0]) #=antal kolonner
     new_matrix = []
