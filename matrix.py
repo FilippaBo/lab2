@@ -71,12 +71,14 @@ def matmul(A, B):
 #I = [[1,0,0],[0,1,0],[0,0,1]]
 #print(matmul(I,[[1, 2, 3], [4, 5, 6],[7, 8, 9]]))
 
+#test(matrix.invert, [[1,0],[0,1]], [[1,0],[0,1]])
 
 def invert(M):
     det=M[0][0]*M[1][1]-M[0][1]*M[1][0]
-    A=[[M[0][1]/det, -M[0][1]/det], [-M[1][0]/det, M[0][0]/det]]
-    return A
 
+    A = [[M[1][1] / det, -M[0][1] / det], 
+         [-M[1][0] / det, M[0][0] / det]]
+    return A
 
 
 def loadtxt(name):
