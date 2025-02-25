@@ -41,12 +41,6 @@ def polynom_regression(data,n,step):
         
     sorted_x=sorted(X)
 
-    """To construct X2 start with the smallest number in X and finish with the biggest.
-      You can choose n by dividing the difference between the smallest and the biggest 
-      number by a small step. In our experiments step 0.2 works well.    
-      - menar de att n=0.2 eller att vi väljer n och ett annat värde step=0.2?
-      - ska det vara så här och blir då num_steps = n och behöver vi skicka in n?"""
-    
     num_steps = int((sorted_x[-1] - sorted_x[0]) / step) 
     X2 = linspace(sorted_x[0], sorted_x[-1], num_steps).tolist()
 
@@ -61,7 +55,7 @@ def polynom_regression(data,n,step):
 
     print(Y2)
     plt.plot(X,Y,'ro')
-    plt.plot(X,Y2)
+    plt.plot(X2,Y2)
     plt.show()
 
 
