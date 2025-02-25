@@ -1,6 +1,7 @@
 def transpose(matrix):
     if not matrix:  #kollar om matrix är tom
         return []
+    
     rows = len(matrix) #=antal rader
     cols =len(matrix[0]) #=antal kolonner
     new_matrix = []
@@ -34,6 +35,11 @@ def powers(lst,start,end):
 
 
 def matmul(A, B):
+    if not A:
+        return []
+    if not B:
+        return []
+    
     rowsA = len(A)
     colsA = len(A[0])
     rowsB = len(B)
@@ -54,6 +60,8 @@ def matmul(A, B):
 
     return C
 #tester matmul:
+#A=([],[])
+#B=([])
 #A = [[0,1],[1,0]]
 #B = [[1, 0],[0,-1]]
 #print(matmul(A,B))
