@@ -1,6 +1,6 @@
 from numpy import * #stjärnan =hämtar hela doc
 import matplotlib.pyplot as plt
-
+import sys 
 
 def powers(lst,start,end):
     matrix=[]
@@ -24,7 +24,7 @@ def powers(lst,start,end):
 
 
 
-def polynom_regression(data,n,step):
+def polynom_regression(data,n):
     data_transposed = transpose(data)
     #plockar ut data ur fil
     X = data_transposed[0]
@@ -40,7 +40,7 @@ def polynom_regression(data,n,step):
     
         
     sorted_x=sorted(X)
-
+    step=0.2
     num_steps = int((sorted_x[-1] - sorted_x[0]) / step) 
     X2 = linspace(sorted_x[0], sorted_x[-1], num_steps).tolist()
 
@@ -72,8 +72,9 @@ def poly(a,x):
 
 #print(poly([1,2,3],4))
 
-data=loadtxt("chirps-modified.txt")
-polynom_regression(data,2,0.2)
+data=loadtxt(sys.argv[1])
+deg=int(sys.argv[2])
+polynom_regression(data,deg)
 
 #print(powers([2,3,4],0,2))
 
