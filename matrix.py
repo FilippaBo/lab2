@@ -1,9 +1,9 @@
 def transpose(matrix):
-    if not matrix:  #kollar om matrix är tom
+    if not matrix:  
         return []
     
-    rows = len(matrix) #=antal rader
-    cols =len(matrix[0]) #=antal kolonner
+    rows = len(matrix) 
+    cols =len(matrix[0]) 
     new_matrix = []
     
     for j in range(cols):
@@ -14,7 +14,6 @@ def transpose(matrix):
 
     return new_matrix
 
-#print(transpose([[1, 2], [3, 4], [5, 6]]))  
 
 
 def powers(lst,start,end):
@@ -23,7 +22,7 @@ def powers(lst,start,end):
         
         new_list=[]
         
-        value = float(lst[e])  #gör om till int. vet inte om det är rätt men det slutade komma error
+        value = float(lst[e])  
         for exponent in range(start,end+1):
             new_value=value**exponent
             new_list.append(new_value)
@@ -31,7 +30,6 @@ def powers(lst,start,end):
         matrix.append(new_list)
     return matrix
 
-#print(powers([2,3,4],0,2))
 
 
 def matmul(A, B):
@@ -59,19 +57,7 @@ def matmul(A, B):
         C.append(row)
 
     return C
-#tester matmul:
-#A=([],[])
-#B=([])
-#A = [[0,1],[1,0]]
-#B = [[1, 0],[0,-1]]
-#print(matmul(A,B))
 
-#print(matmul([[1, 2, 3], [4, 5, 6]],[[7,8,9,10],[11,12,13,14],[15,16,17,18]]))
-
-#I = [[1,0,0],[0,1,0],[0,0,1]]
-#print(matmul(I,[[1, 2, 3], [4, 5, 6],[7, 8, 9]]))
-
-#test(matrix.invert, [[1,0],[0,1]], [[1,0],[0,1]])
 
 def invert(M):
     det=M[0][0]*M[1][1]-M[0][1]*M[1][0]
@@ -93,4 +79,3 @@ def loadtxt(name):
         result.append(tal)
     x.close()
     return result
-#print(loadtxt('chirps.txt'))
